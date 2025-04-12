@@ -48,7 +48,7 @@ class HotelImage(models.Model):
 
 class Room(models.Model):
     room_number = models.PositiveSmallIntegerField()
-    hotel_room = models.ForeignKey(Hotel, on_delte=models.CASCADE, related_name='rooms')
+    hotel_room = models.ForeignKey(Hotel, on_delete=models.CASCADE, related_name='rooms')
     TYPE_CHOICES = (
         ('люкс', 'люкс'),
         ('семейный', 'семейный'),
@@ -71,7 +71,7 @@ class Room(models.Model):
 
 
 
-class RoomImagi(models.Model):
+class RoomImage(models.Model):
     room = models.ForeignKey(Room, on_delete=models.CASCADE)
     room_image = models.ImageField(upload_to='room_image/')
 
